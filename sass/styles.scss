@@ -1,0 +1,88 @@
+// Main dependencies
+
+// $visual-grid:     true !global;
+$visual-grid-color: lighten(red, 30%) !default;
+
+@import 'bourbon';
+@import 'neat';
+
+$milk-chocolate:  #6f3f16;
+$pale:            #feeecc;
+$bluish:          #2c89b7;
+$black:           #333333;
+
+$mobile:          new-breakpoint(max-width 500px 4);
+$max-width:       rem(1200) !global;
+
+$title-font:      'Pacifico', cursive;
+$body-font:       'Quicksand', sans-serif;
+
+
+body {
+  background: $pale;
+  margin: 0;
+}
+
+.container {
+  @include outer-container;
+  position: relative;
+}
+
+.title {
+  font-family: $title-font;
+  font-weight: normal;
+  font-size: rem(109);
+  color: $milk-chocolate;
+  text-align: right;
+  width: 100%;
+  display: block;
+  margin: rem(68) 0 rem(51) 0;
+
+  @include media($mobile) {
+    text-align: center;
+    font-size: rem(48);
+  }
+}
+
+.monkey {
+  // background: red;
+  position: absolute;
+  bottom: 0;
+  left: $column;
+  @include span-columns(3 of 12);
+}
+
+.cake {
+  // background: green;
+  @include span-columns(4 of 12);
+  position: absolute;
+  left: $column;
+  bottom: -3rem;
+  z-index: 2;
+}
+
+
+.text {
+  @include shift(4 of 12);
+  @include span-columns(7 of 12);
+  font-family: $body-font;
+  font-size: rem(48);
+  text-align: right;
+  color: $black;
+  margin-top: 0;
+
+  @include media($mobile) {
+    @include shift(0);
+    @include span-columns(4 of 4);
+    font-size: rem(24);
+    text-align: center;
+  }
+}
+
+.table {
+  position: absolute;
+  width: 100%;
+  height: rem(128);
+  background: $bluish;
+  margin-top: -2rem;
+}
