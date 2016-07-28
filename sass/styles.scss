@@ -50,6 +50,11 @@ body {
   bottom: 0;
   left: $column;
   @include span-columns(3 of 12);
+  @include transition(transform 1.0s ease-in);
+
+  &.sliding{
+    transform: translateY(100%);
+  }
 }
 
 .cake {
@@ -59,6 +64,11 @@ body {
   left: $column;
   bottom: -3rem;
   z-index: 2;
+  @include transition(transform 1.0s ease-in);
+
+  &.sliding{
+    transform: translateX(-100%);
+  }
 }
 
 

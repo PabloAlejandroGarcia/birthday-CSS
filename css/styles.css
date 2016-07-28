@@ -39,9 +39,12 @@ body {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 23.23176%; }
+  width: 23.23176%;
+  transition: transform 1s ease-in; }
   .monkey:last-child {
     margin-right: 0; }
+  .monkey.sliding {
+    transform: translateY(100%); }
 
 .cake {
   float: left;
@@ -51,9 +54,12 @@ body {
   position: absolute;
   left: 4.2358em;
   bottom: -3rem;
-  z-index: 2; }
+  z-index: 2;
+  transition: transform 1s ease-in; }
   .cake:last-child {
     margin-right: 0; }
+  .cake.sliding {
+    transform: translateX(-100%); }
 
 .text {
   margin-left: 34.11922%;
